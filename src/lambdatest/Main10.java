@@ -20,7 +20,7 @@ public class Main10 {
             .setTo("San Francisco")
             .build();
 
-    static <T, U> U convertToJson(Function<T, U> converter, T obj) {
+    static <T, U> U convert(Function<T, U> converter, T obj) {
         return converter.apply(obj);
     }
 
@@ -29,13 +29,13 @@ public class Main10 {
      */
     public static void main(String[] args) {
 
-        String simple = convertToJson(
+        String simple = convert(
                 f -> new JSONObject()
                         .put("code", f.getCode())
                         .toString(),
                 flight);
 
-        String full = convertToJson(
+        String full = convert(
                 f -> new JSONObject()
                         .put("code", f.getCode())
                         .put("from", f.getFrom())
@@ -43,16 +43,22 @@ public class Main10 {
                         .toString(),
                 flight);
 
-        String string = convertToJson(
+        String string = convert(
                 s -> new JSONObject()
                         .put("myString", s)
                         .toString(),
                 "Mi chiamo Claudio :)");
 
+        Integer codeLen = convert(
+                f -> f.getCode().length(),
+                flight);
+
         System.out.println("SimpleConverter: " + simple);
         System.out.println("FullConverter: " + full);
 
         System.out.println("StringConverter: " + string);
+
+        System.out.println("DoubleConverter: " + codeLen);
 
     }
 
