@@ -14,5 +14,9 @@ Here are the steps:
 - **Main5**: remove input type and curly brackets from lambda, using a more compact notation
 - **Main6**: make `FlightConverter` interface is more generic, it is able to take in input any type and convert it into a String; it's name change into `MyJSONConverter`
 - **Main7**: still more generic use of interfaces into the `convertToJson` function, pooling together the input type
+- **Main8**: add an example of converting any String into JSON, without changing anything of the previous work
+- **Main9**: make also return type of `MyJSONConverter` generic; it's name change into `MyConverter`
+- **Main10**: replace `MyConverter` with the built-in Java Function; also `MyConverter` is not longer needed! 🎉🎉🎉
+
 
 
